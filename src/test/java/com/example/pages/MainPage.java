@@ -6,23 +6,32 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class MainPage extends BasePage {
-    @FindBy(css = "h1[class='mantine-Title-root mantine-Group-child mantine-ozp7z9']")
-    public WebElement titleTask;
+    @FindBy(xpath = "//h1[contains(@class, 'mantine-Title-root')]")
+    public WebElement labelMainPage;
 
-    @FindBy(css = "button[type='button']")
-    public WebElement newTasksButton;
+    @FindBy(xpath = "//div[contains(@class,'mantine-Button-inner')]")
+    public WebElement newTaskButton;
 
-    @FindBy(css = "#mantine-f38s9a9bs-title")
-    public WebElement newTasksTable;
-
-    @FindBy(css = "#mantine-pfj9p2a6x")
+    @FindBy(xpath = "//input[contains(@class,'mantine-TextInput-input')]")
     public WebElement  taskTitleInput;
 
-    @FindBy(css = "#mantine-hmuvdpwi6")
+    @FindBy(xpath = "//input[@placeholder='Task Summary']")
     public WebElement  summaryTaskInput;
 
-    @FindBy(css = ".mantine-Text-root mantine-1htc9ja")
+    @FindBy(xpath = "//button[contains(@class,'mantine-Button-root mantine-Group')][2]")
+    public WebElement  createTaskButton;
+
+    @FindBy(xpath = "//div[2]/div[2]")
     public WebElement  creatingTask;
+
+    @FindBy(xpath = "//div[contains(@class,'mantine-Card-root')]")
+    public List<WebElement> allTasks;
+
+    @FindBy(xpath = "//button[contains(@class,'mantine-ActionIcon-transparent')]")
+    public WebElement iconBin;
+
+    @FindBy(xpath = "//button[contains(@class,'mantine-ActionIcon-transparent')]")
+    public List<WebElement> allIconBin;
 
 
     public MainPage(TestContext context) {
